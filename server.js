@@ -2,12 +2,12 @@ require('node-jsx').install()
 
 var express = require('express')
 var app = express()
-var serverApp = require('./src/server')
+var source = require('./src/server')
 
 app.use(express.static('build'));
 
 app.get('*', function (req, res) {
-  res.send(serverApp())
+  res.send(source)
 })
 
 var server = app.listen(3000, function () {
