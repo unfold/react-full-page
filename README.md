@@ -6,7 +6,7 @@ Renders full document through React (from `<html>` node). Note: this currently o
 Usage
 ===============
 ```
-npm install
-webpack
-node server
+$ npm install
+$ webpack
+$ node server
 ```
