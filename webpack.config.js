@@ -1,6 +1,6 @@
 var client = {
     context: __dirname + '/src',
-    entry: './index',
+    entry: './client',
 
     output: {
         path: __dirname + '/build',
@@ -18,7 +18,7 @@ var client = {
 var server = {
     target: 'node',
     context: __dirname + '/src',
-    entry: './Application',
+    entry: './server',
 
     output: {
         path: __dirname + '/build',
