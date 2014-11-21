@@ -1,9 +1,8 @@
+require('node-jsx').install()
+
 var express = require('express')
 var app = express()
-
-// Todo: Figure out how to reload module when it changes
-// (or on load), so that it gets the newest changes of module
-var serverApp = require('./build/server')
+var serverApp = require('./src/server')
 
 app.use(express.static('build'));
 
