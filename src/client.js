@@ -1,8 +1,11 @@
 'use strict';
 
 var React = require('react')
-var Application = require('./Application')
+var Router = require('react-router')
+var routes = require('./routes')
 
 window.addEventListener('load', function() {
-  React.render(<Application />, document)
+  Router.run(routes, Router.HistoryLocation, function(Handler) {
+    React.render(<Handler />, document)
+  })
 })

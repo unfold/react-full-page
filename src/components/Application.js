@@ -1,6 +1,9 @@
 'use strict';
 
 var React = require('react')
+var Router = require('react-router')
+var Link = Router.Link
+var RouteHandler = Router.RouteHandler
 
 var Application = React.createClass({
   getInitialState: function() {
@@ -25,6 +28,13 @@ var Application = React.createClass({
         </head>
         <body className="application" onClick={this.onClick}>
           {this.state.message}
+
+          <ul>
+            <li><Link to="page-one">Page one</Link></li>
+            <li><Link to="page-two">Page two</Link></li>
+          </ul>
+
+          <RouteHandler />
 
           <script src="/client.js" />
         </body>

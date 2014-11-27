@@ -2,12 +2,18 @@ require('node-jsx').install()
 
 var express = require('express')
 var app = express()
-var source = require('./src/server')
+var render = require('./src/server')
 
 app.use(express.static('build'));
 
+app.get('/favicon.ico', function (req, res) {
+  res.status(404);
+});
+
 app.get('*', function (req, res) {
-  res.send(source)
+  render(req.path, function(html) {
+    res.status(200).send(html).end()
+  })
 })
 
 var server = app.listen(3000, function () {
